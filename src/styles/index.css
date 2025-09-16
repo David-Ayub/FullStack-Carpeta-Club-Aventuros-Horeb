@@ -9,6 +9,7 @@ html, body {
     text-align: center;
     color: #fff;
     font-family: sans-serif;
+}
 /* 🔑 Fondo exclusivo de la pantalla de acceso */
 #acceso {
     position: fixed;
@@ -144,4 +145,4 @@ section {
     padding: 20px;
     border-radius: 12px;
     max-width: 900px;
-}
+ }
