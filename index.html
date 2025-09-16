@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/styles/index.css">
+  <title>Carpeta del Club de Aventureros</title>
+</head>
+<body>
+  <!-- Pantalla de Acceso -->
+  <div id="acceso">
+    <div class="acceso-box">
+      <h2>🔑 Acceso a la Carpeta</h2>
+      <p>Ingrese el año de fundación de la Asociación Centro Occidental de los Adventistas del Séptimo Día</p>
+      <input type="password" id="clave" placeholder="Escribe la clave">
+      <button onclick="verificarClave()">Entrar</button>
+      <p id="mensaje-error" style="color: rgb(255, 196, 0); display: none;">❌ Parece que te equivocastes, por favor ingresa la clave correcta</p>
+    </div>
+  </div>
+
+  <!-- Contenido de la Carpeta -->
+  <div id="content" style="display: none;">
+
+    <!-- Encabezado -->
+    <header>
+      <h1>Club de Aventureros Horeb</h1>
+      <h2>"Conquistando la cima"</h2>
+    </header>
+
+    <!-- Pantalla de Inicio -->
+    <section id="inicio">
+      <h2>Bienvenidos a nuestra Carpeta Oficial del Club 🐘🦒</h2>
+      <p>
+        "Dios quiere que todo niño de tierna edad sea su hijo, adoptado en su familia. 
+        Pueden ser miembros de la familia de la fe, y tener una experiencia muy preciosa. 
+        ¡Cristo hará de ellos pequeños misioneros."
+      </p>
+
+      <div class="botones">
+        <button onclick="mostrarSeccion('conocenos')">👤 Conócenos</button>
+        <button onclick="mostrarSeccion('historia')">📖 Nuestra Historia</button>
+        <button onclick="mostrarSeccion('actividades')">🎲 Nuestras Actividades</button>
+        <button onclick="mostrarSeccion('ideales')">🧬 Nuestros Ideales</button>
+        <button onclick="mostrarSeccion('galeria')">📸 Nuestra Galería</button>
+      </div>
+    </section>
+
+    <!-- Secciones internas -->
+    <section id="conocenos" class="oculto">
+      <h2>👤 Conócenos</h2>
+      <p>Aquí van las hojas de vida de la directiva y aventureros.</p>
+      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
+    </section>
+
+    <section id="historia" class="oculto">
+      <h2>📖 Historia del Club</h2>
+      <p>Aquí va la historia del club.</p>
+      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
+    </section>
+
+    <section id="actividades" class="oculto">
+      <h2>🎲 Nuestras Actividades</h2>
+      <p>Cronograma de actividades hasta octubre</p>
+      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
+    </section>
+
+    <section id="ideales" class="oculto">
+      <h2>🧬 Nuestros Ideales</h2>
+      <p>Visión, misión y propósito del Club.</p>
+      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
+    </section>
+
+    <section id="galeria" class="oculto">
+      <h2>📸 Nuestra Galería</h2>
+      <p>Aquí estarán las evidencias fotográficas de las actividades realizadas.</p>
+      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
+    </section>
+
+    <!-- Versículo -->
+    <section>
+      <h2>Versículo Principal ✨</h2>
+      <blockquote>
+        "Y Noé hizo conforme a todo lo que Jehová le mandó." <br>
+        <em>Génesis 7:5</em>
+      </blockquote>
+    </section>
+
+    <!-- Pie -->
+    <footer>
+      <p>&copy; Club de Aventureros Horeb 2025</p>
+    </footer>
+
+  </div>
+
+  <!-- Script -->
+  <script src="./src/app/app.js"></script>
+</body>
+</html>
