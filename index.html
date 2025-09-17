@@ -46,10 +46,198 @@
     </section>
 
     <!-- Secciones internas -->
+     
+    <!-- SECCIÓN HOJAS DE VIDA -->
     <section id="conocenos" class="oculto">
-      <h2>👤 Conócenos</h2>
-      <p>Aquí van las hojas de vida de la directiva y aventureros.</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
+      <h2 class="encabezado-epico">Hojas de Vida del Club Horeb</h2>
+
+      <!-- Barra de búsqueda -->
+      <div class="busqueda-container" style="text-align:center; margin: 20px 0;">
+        <input type="text" id="buscar-miembro" placeholder="🔍 Buscar por nombre..." 
+               onkeyup="filtrarMiembros()" style="padding: 8px 12px; width: 250px; border-radius: 6px; border: 2px solid #3498db; font-size: 14px;">
+      </div>
+
+      <!-- Total integrantes -->
+      <div class="grupo">
+        <div class="tarjetas">
+          <div class="tarjeta total">
+            <h6 id="total-integrantes">Integrantes del Club: 0</h6>
+            <button>Actualizar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Directiva -->
+      <div class="grupo">
+        <h3>Miembros de la Directiva</h3>
+        <div class="tarjetas">
+          <div class="tarjeta directiva">
+            <img src="img/fotos-hojas-de-vida/foto1.jpg" alt="Liliana Ayub">
+            <h4>Liliana Ayub Solera</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta directiva">
+            <img src="img/fotos-hojas-de-vida/foto-david-quinto.jpg" alt="Nelson Quinto">
+            <h4>Nelson Quinto Mosquera</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta directiva">
+            <img src="img/fotos-hojas-de-vida/foto-david-quinto.jpg" alt="David Quinto">
+            <h4>David Quito Ayub</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta directiva">
+            <img src="img/fotos-hojas-de-vida/foto4.jpg" alt="Emerson Diaz">
+            <h4>Emerson Díaz Misal</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta directiva">
+            <img src="img/fotos-hojas-de-vida/foto5.jpg" alt="Yuliett">
+            <h4>Yuliett Hernández Montoya</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Miembros -->
+      <div class="grupo">
+        <h3>Miembros del Club</h3>
+        <div class="tarjetas">
+          <!-- Aquí van todas las tarjetas de miembros, completas -->
+          <div class="tarjeta miembro mujer">
+            <img src="img/fotos-hojas-de-vida/foto6.jpg" alt="Ailín Álvarez">
+            <h4>Ailín Álvarez Jaraba</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="img/fotos-hojas-de-vida/foto7.jpg" alt="Yefrem Palacio">
+            <h4>Yefrem Palacio Berrio</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="img/fotos-hojas-de-vida/foto6.jpg" alt="Valeria Álvarez">
+            <h4>Valeria Álvarez Jaraba</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="img/fotos-hojas-de-vida/foto8.jpg" alt="Alahia Ayub">
+            <h4>Alahia Ayub Rios</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="img/fotos-hojas-de-vida/foto-daniela.jpg" alt="Yajaira Hernández">
+            <h4>Yajaira Hernández Rojas</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="img/fotos-hojas-de-vida/foto-daniela.jpg" alt="Maira Mosquera">
+            <h4>Maira Mosquera Galindo</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="img/fotos-hojas-de-vida/foto9.jpg" alt="Yeiner Muñoz">
+            <h4>Yeiner Muñoz Garcés</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="img/fotos-hojas-de-vida/foto10.jpg" alt="Kaleth Guerra">
+            <h4>Kaleth Guerra Yoli</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="img/fotos-hojas-de-vida/foto-daniela.jpg" alt="Catalella Díaz">
+            <h4>Catalella Díaz Hernández</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="img/fotos-hojas-de-vida/foto10.jpg" alt="Dilan Palacio">
+            <h4>Dilan Palacio Berio</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="img/fotos-hojas-de-vida/foto10.jpg" alt="Caleb Quinto">
+            <h4>Caleb Quinto Ayub</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="img/fotos-hojas-de-vida/foto10.jpg" alt="Herly Diaz">
+            <h4>Herly Diaz Batista</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="img/fotos-hojas-de-vida/foto10.jpg" alt="Jhonier Gallego">
+            <h4>Jhonier Gallego Teherán</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acompañantes -->
+      <div class="grupo">
+        <h3>Acompañantes del Club</h3>
+        <div class="tarjetas">
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Edilma López">
+            <h4>Edilma López Estrada</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Ady Yoli">
+            <h4>Ady Yoli Anaya</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Dalia Galindo">
+            <h4>Dalia Galindo Rúa</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Dorkis Jaraba">
+            <h4>Dorkis Jaraba Castillo</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Verónica Álvarez">
+            <h4>Verónica Álvarez Jaraba</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Máximo Torres">
+            <h4>Máximo Antonio Torres</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Roberto Mendoza">
+            <h4>Roberto Mendoza Pérez</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Raúl Palacio">
+            <h4>Raúl Palacio Salas</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Marledis Berrio">
+            <h4>Marledis Berrio Caucil</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Luís Hernández">
+            <h4>Luís Hernández Santana</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Viviana Castellano">
+            <h4>Viviana Castellano González</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Diana Villamil">
+            <h4>Diana Villamil Arroyave</h4>
+            <button>Ver Hoja de Vida</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="historia" class="oculto">

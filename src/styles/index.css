@@ -1,148 +1,280 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ==============================
+   🎨 ESTILOS GENERALES
+   ============================== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #222;
 }
-html, body {
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-family: sans-serif;
+
+h1, h2, h3, h4, h6 {
+  margin: 10px 0;
 }
-/* 🔑 Fondo exclusivo de la pantalla de acceso */
+
+/* ==============================
+   🔑 PANTALLA DE ACCESO
+   ============================== */
 #acceso {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../img/gif/barco-de-fondo4.gif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* z-index: 9999; */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .acceso-box {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 400px;
-    text-align: center;
+  background: #1c2833;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
-#acceso input {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 10px;
-    width: 80%;
-    text-align: center;
+.acceso-box input {
+  margin: 12px 0;
+  padding: 10px;
+  width: 90%;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
 }
 
-#acceso button {
-    margin-top: 15px;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-    background-color: #3498db;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+.acceso-box button {
+  background: #f1c40f;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-#acceso button:hover {
-    background-color: #1d6fa5;
+.acceso-box button:hover {
+  background: #d4ac0d;
 }
 
-/* 🌌 Fondo del resto de la carpeta */
-#content {
-    background-image: url("https://images8.alphacoders.com/139/thumb-1920-1396202.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-    padding-bottom: 20px;
-}
-
-/* Encabezado */
+/* ==============================
+   📌 ENCABEZADO
+   ============================== */
 header {
-    background-color: rgba(44, 62, 80, 0.8);
-    color: white;
-    padding: 20px;
-    border-bottom: 5px solid #3498db;
+  background: #3498db;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 4px solid #2980b9;
 }
 
-h1,
-h2 {
-    margin: 10px 0;
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
 }
 
-p,
-blockquote {
-    font-size: 18px;
-    margin: 20px;
-    line-height: 1.6;
+/* ==============================
+   🏡 INICIO
+   ============================== */
+#inicio {
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* Botones */
-.botones {
-    margin-top: 20px;
+#inicio p {
+  max-width: 600px;
+  margin: 15px auto;
+  font-style: italic;
+  color: #444;
 }
 
-button {
-    margin: 10px;
-    padding: 15px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 12px;
-    background-color: #3498db;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+.botones button {
+  margin: 8px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #2ecc71;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-button:hover {
-    background-color: #1d6fa5;
+.botones button:hover {
+  background: #27ae60;
 }
 
-/* Bloques destacados */
-blockquote {
-    font-style: italic;
-    border-left: 5px solid #3498db;
-    padding-left: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    display: inline-block;
-    border-radius: 8px;
-    color: #f1f1f1;
+/* ==============================
+   📂 SECCIÓN HOJAS DE VIDA
+   ============================== */
+#conocenos {
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 16px;
+  margin: 20px auto;
+  max-width: 1300px;
 }
 
-/* Pie */
-footer {
-    background-color: rgba(44, 62, 80, 0.8);
-    color: white;
-    padding: 10px;
-    margin-top: 30px;
+#conocenos .encabezado-epico {
+  text-align: center;
+  font-size: 2rem;
+  color: #e67e22;
+  margin-bottom: 20px;
 }
 
-/* Ocultar secciones */
-.oculto {
-    display: none;
+/* Barra de búsqueda */
+#buscar-miembro {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #3498db;
+  width: 250px;
+  font-size: 14px;
 }
 
-/* Secciones internas */
+/* Grupos */
+.grupo {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 25px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.grupo h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #222;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+/* Tarjetas */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.tarjeta {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 12px;
+  width: 170px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.tarjeta img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.tarjeta h4 {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.tarjeta button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.tarjeta button:hover {
+  background: #0056b3;
+}
+
+/* Total integrantes */
+.tarjeta.total {
+  background: linear-gradient(135deg, #fff8dc, #f9e79f);
+  border: 2px solid gold;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  padding: 20px;
+  width: 220px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Colores por tipo */
+.tarjeta.directiva {
+  background: #fff9e6;
+  border: 2px solid #f4d03f;
+}
+
+.tarjeta.miembro {
+  background: #e6f2ff;
+  border: 2px solid #3498db;
+}
+
+.tarjeta.miembro.mujer {
+  background: #fde6ff;
+  border: 2px solid #d63384;
+}
+
+.tarjeta.acompanante {
+  background: #f7f7f7;
+  border: 2px solid #7f8c8d;
+}
+
+/* ==============================
+   📖 OTRAS SECCIONES
+   ============================== */
 section {
-    background: rgba(0, 0, 0, 0.5);
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 900px;
- }
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* ==============================
+   📜 VERSÍCULO
+   ============================== */
+blockquote {
+  font-style: italic;
+  background: #ecf0f1;
+  padding: 15px;
+  border-left: 5px solid #3498db;
+  border-radius: 8px;
+  margin: 15px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* ==============================
+   🦶 PIE
+   ============================== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 30px;
+}
