@@ -1,280 +1,386 @@
-/* ==============================
-   🎨 ESTILOS GENERALES
-   ============================== */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #222;
-}
-
-h1, h2, h3, h4, h6 {
-  margin: 10px 0;
-}
-
-/* ==============================
-   🔑 PANTALLA DE ACCESO
-   ============================== */
-#acceso {
+/* 🔙 Botón fijo para volver al inicio */
+.btn-volver {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, #2c3e50, #34495e);
+  top: 15px;
+  left: 15px;
+  background: #3498db;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 1000; /* Siempre arriba */
+}
+
+.btn-volver:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: sans-serif;
+}
+/* 🔑 Fondo exclusivo de la pantalla de acceso */
+#acceso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/gif/barco-de-fondo4.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* z-index: 9999; */
 }
 
 .acceso-box {
-  background: #1c2833;
-  padding: 30px;
-  border-radius: 14px;
-  text-align: center;
-  width: 320px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 400px;
+    text-align: center;
 }
 
-.acceso-box input {
-  margin: 12px 0;
-  padding: 10px;
-  width: 90%;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
+#acceso input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 80%;
+    text-align: center;
 }
 
-.acceso-box button {
-  background: #f1c40f;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
+#acceso button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.acceso-box button:hover {
-  background: #d4ac0d;
+#acceso button:hover {
+    background-color: #1d6fa5;
 }
 
-/* ==============================
-   📌 ENCABEZADO
-   ============================== */
+/* 🌌 Fondo del resto de la carpeta */
+#content {
+    background-image: url("https://images8.alphacoders.com/139/thumb-1920-1396202.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
+/* Encabezado */
 header {
-  background: #3498db;
-  color: white;
+    background-color: rgba(44, 62, 80, 0.8);
+    color: white;
+    padding: 20px;
+    border-bottom: 5px solid #3498db;
+}
+
+h1,
+h2 {
+    margin: 10px 0;
+}
+
+p,
+blockquote {
+    font-size: 18px;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+/* Botones */
+.botones {
+    margin-top: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #1d6fa5;
+}
+
+/* Bloques destacados */
+blockquote {
+    font-style: italic;
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-radius: 8px;
+    color: #f1f1f1;
+}
+
+/* Pie */
+footer {
+    background-color: rgba(44, 62, 80, 0.8);
+    color: white;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+/* Ocultar secciones */
+.oculto {
+    display: none;
+}
+
+/* Secciones internas */
+section {
+    background: rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 900px;
+ }
+
+/* 🔹 SECCIÓN HOJAS DE VIDA DEL CLUB */
+
+.encabezado-epico {
   text-align: center;
-  padding: 20px;
-  border-bottom: 4px solid #2980b9;
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #ffcc00;
+  font-family: "Comic Sans MS", "Fredoka One", cursive;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  text-transform: uppercase;
 }
 
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 5px;
-}
-
-/* ==============================
-   🏡 INICIO
-   ============================== */
-#inicio {
+/* Subtítulos (Directiva, Miembros, Acompañantes) */
+#conocenos h3 {
   text-align: center;
-  padding: 40px 20px;
-}
-
-#inicio p {
-  max-width: 600px;
-  margin: 15px auto;
-  font-style: italic;
-  color: #444;
-}
-
-.botones button {
-  margin: 8px;
-  padding: 10px 15px;
-  border: none;
+  font-size: 1.2rem; /* más pequeño */
+  font-family: "Baloo 2", "Comic Neue", cursive;
+  color: #ffffff;
+  background: rgba(0,0,0,0.6); /* un solo color sobrio */
+  padding: 6px 0;
+  margin-bottom: 18px;
   border-radius: 8px;
-  background: #2ecc71;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.botones button:hover {
-  background: #27ae60;
-}
-
-/* ==============================
-   📂 SECCIÓN HOJAS DE VIDA
-   ============================== */
-#conocenos {
-  padding: 30px;
-  background: #f9f9f9;
-  border-radius: 16px;
-  margin: 20px auto;
-  max-width: 1300px;
-}
-
-#conocenos .encabezado-epico {
-  text-align: center;
-  font-size: 2rem;
-  color: #e67e22;
-  margin-bottom: 20px;
-}
-
-/* Barra de búsqueda */
-#buscar-miembro {
-  padding: 10px;
-  border-radius: 8px;
-  border: 2px solid #3498db;
-  width: 250px;
-  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Grupos */
-.grupo {
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 25px 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+#conocenos .grupo {
+  margin-bottom: 40px;
 }
 
-.grupo h3 {
-  text-align: center;
-  margin-bottom: 15px;
-  color: #222;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
-  font-size: 1.3rem;
-}
-
-/* Tarjetas */
-.tarjetas {
+/* Tarjetas en cuadrícula */
+#conocenos .tarjetas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
+  gap: 18px;
   justify-items: center;
 }
 
-.tarjeta {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 14px;
+/* Tarjeta general */
+#conocenos .tarjeta {
+  width: 180px;
   padding: 12px;
-  width: 170px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #12276d;
 }
 
-.tarjeta:hover {
+#conocenos .tarjeta:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
 }
 
-.tarjeta img {
-  width: 100px;
-  height: 100px;
+/* Imagen circular */
+#conocenos .tarjeta img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  object-fit: cover;
   margin-bottom: 8px;
+  object-fit: cover;
 }
 
-.tarjeta h4 {
-  font-size: 1rem;
-  margin: 8px 0;
-  color: #333;
-  font-weight: bold;
-}
-
-.tarjeta button {
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 10px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.tarjeta button:hover {
-  background: #0056b3;
-}
-
-/* Total integrantes */
-.tarjeta.total {
-  background: linear-gradient(135deg, #fff8dc, #f9e79f);
+/* Directiva */
+#conocenos .tarjeta.directiva {
+  background: #fff8dc;
   border: 2px solid gold;
-  font-size: 1.1rem;
+}
+#conocenos .tarjeta.directiva img {
+  border: 3px solid gold;
+}
+.tarjeta.directiva h4 {
+  color: #70662a;
   font-weight: bold;
-  color: #333;
-  padding: 20px;
-  width: 220px;
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Colores por tipo */
-.tarjeta.directiva {
-  background: #fff9e6;
-  border: 2px solid #f4d03f;
-}
-
-.tarjeta.miembro {
-  background: #e6f2ff;
+/* Miembros hombres */
+#conocenos .tarjeta.miembro {
+  background: #eaf6ff;
   border: 2px solid #3498db;
 }
-
-.tarjeta.miembro.mujer {
-  background: #fde6ff;
-  border: 2px solid #d63384;
+#conocenos .tarjeta.miembro img {
+  border: 3px solid #3498db;
+}
+.tarjeta.miembro h4 {
+  color: #163d57;
+  font-weight: bold;
 }
 
-.tarjeta.acompanante {
-  background: #f7f7f7;
-  border: 2px solid #7f8c8d;
+/* Miembros mujeres */
+#conocenos .tarjeta.miembro.mujer {
+  background: #f5dfea;
+  border: 2px solid #6a0dad;
+  color: #4e124e;
+}
+#conocenos .tarjeta.miembro.mujer img {
+  border: 3px solid #6a0dad;
+}
+.tarjeta.miembro.mujer h4 {
+  color: #6a0dad;
+  font-weight: bold;
 }
 
-/* ==============================
-   📖 OTRAS SECCIONES
-   ============================== */
-section {
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 900px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+/* Acompañantes */
+#conocenos .tarjeta.acompanante {
+  background: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+}
+#conocenos .tarjeta.acompanante img {
+  border: 3px solid #000000;
+}
+#conocenos .tarjeta.acompanante h4 {
+  color: #000000;
+  font-weight: bold;
 }
 
-section h2 {
-  color: #2c3e50;
-  text-align: center;
-}
-
-/* ==============================
-   📜 VERSÍCULO
-   ============================== */
-blockquote {
-  font-style: italic;
-  background: #ecf0f1;
-  padding: 15px;
-  border-left: 5px solid #3498db;
-  border-radius: 8px;
-  margin: 15px auto;
-  max-width: 600px;
-  text-align: center;
-}
-
-/* ==============================
-   🦶 PIE
-   ============================== */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #2c3e50;
+/* Botón dentro de tarjetas */
+#conocenos .tarjeta button {
+  margin-top: 6px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #06446d;
   color: white;
-  margin-top: 30px;
+  font-size: 12px;
+  font-family: "Franklin Gothic Demi";
+  transition: 0.3s;
+}
+#conocenos .tarjeta button:hover {
+  background: #27ae60;
+}
+
+/* 🔹 Contador de integrantes */
+#total-integrantes {
+  font-size: 1rem; /* más pequeño */
+  font-weight: bold;
+  color: #00000034;
+  background: rgba(128, 48, 48, 0.85);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* 🔹 Barra de búsqueda */
+#busqueda-nombre {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #fdfdfd9a;
+  font-size: 14px;
+  width: 60%;
+  max-width: 300px;
+}
+
+/* Modal oculto por defecto */
+.modal-oculto {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contenido del modal */
+.modal-contenido {
+  position: relative;
+  width: 32%;      /* Puedes ajustar desde JS si quieres tamaños diferentes */
+  height: 100%;     /* Igual que arriba */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Iframe ocupa todo el modal pero centrado y escalado */
+#iframe-pdf {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: contain; /* Ajusta el PDF completo */
+}
+
+/* Botón de cerrar: siempre arriba del iframe */
+#cerrar-modal {
+  position: fixed; /* dentro del modal */
+  top: 6px;
+  right: 410px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #3f0905;
+  color: #ddd;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10; /* encima del iframe */
 }
