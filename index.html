@@ -7,8 +7,11 @@
   <title>Carpeta del Club de Aventureros</title>
 </head>
 <body>
-  <!-- 🔙 Botón volver -->
-  <a href="index.html" id="btn-volver" class="btn-volver">🏠 Inicio</a>
+  <!-- 🔙 Botón volver a inicio -->
+  <a href="#acceso" id="btn-volver" class="btn-volver">🏠 Inicio</a>
+
+  <!-- 🔒 Botón que bloquea-->
+  <button id="btn-bloqueo" class="btn-bloqueo" onclick="volverAlBloqueo()">🔒 Bloquear</button>
 
   <!-- Pantalla de Acceso -->
   <div id="acceso">
@@ -26,8 +29,7 @@
 
     <!-- Encabezado -->
     <header>
-      <h1>Club de Aventureros Horeb</h1>
-      <h2>"Conquistando la cima"</h2>
+      <h1>CLUB DE AVENTUREROS HOREB</h1>
     </header>
 
     <!-- Pantalla de Inicio -->
@@ -39,13 +41,25 @@
         ¡Cristo hará de ellos pequeños misioneros."
       </p>
 
-      <div class="botones">
-        <button onclick="mostrarSeccion('conocenos')">👤 Conócenos</button>
-        <button onclick="mostrarSeccion('historia')">📖 Nuestra Historia</button>
-        <button onclick="mostrarSeccion('actividades')">🎲 Nuestras Actividades</button>
-        <button onclick="mostrarSeccion('ideales')">🧬 Nuestros Ideales</button>
-        <button onclick="mostrarSeccion('galeria')">📸 Nuestra Galería</button>
-      </div>
+      <div class="botones-fondo">
+       <div class="botones">
+        <div class="boton-escudo" onclick="mostrarSeccion('conocenos')">
+         <span>CONÓCENOS</span>
+        </div>
+        <div class="boton-escudo" onclick="mostrarSeccion('historia')">
+         <span>HISTORIA</span>
+       </div>
+       <div class="boton-escudo" onclick="mostrarSeccion('actividades')">
+         <span>ACTIVIDADES</span>
+       </div>
+       <div class="boton-escudo" onclick="mostrarSeccion('proyectos')">
+         <span>PROYECTOS</span>
+       </div>
+       <div class="boton-escudo" onclick="mostrarSeccion('eventos')">
+         <span>EVENTOS</span>
+       </div>
+       </div>
+     </div>
     </section>
 
     <!-- Secciones internas -->
@@ -138,11 +152,6 @@
             <h4>Yidis Palacio Alvarado</h4>
             <button>Ver Hoja de Vida</button>
           </div>
-          <div class="tarjeta miembro mujer">
-            <img src="img/fotos-hojas-de-vida/foto-daniela.jpg" alt="Maira Mosquera">
-            <h4>Maira Mosquera Galindo</h4>
-            <button>Ver Hoja de Vida</button>
-          </div>
           <div class="tarjeta miembro">
             <img src="img/fotos-hojas-de-vida/foto9.jpg" alt="Yeiner Muñoz">
             <h4>Yeiner Muñoz Garcés</h4>
@@ -193,11 +202,6 @@
           <div class="tarjeta acompanante">
             <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Ady Yoli">
             <h4>Ady Yoli Anaya</h4>
-            <button>Ver Hoja de Vida</button>
-          </div>
-          <div class="tarjeta acompanante">
-            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Dalia Galindo">
-            <h4>Dalia Galindo Rúa</h4>
             <button>Ver Hoja de Vida</button>
           </div>
           <div class="tarjeta acompanante">
@@ -257,25 +261,22 @@
     <section id="historia" class="oculto">
       <h2>📖 Historia del Club</h2>
       <p>Aquí va la historia del club.</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
     </section>
 
     <section id="actividades" class="oculto">
       <h2>🎲 Nuestras Actividades</h2>
       <p>Cronograma de actividades hasta octubre</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
+
     </section>
 
     <section id="ideales" class="oculto">
       <h2>🧬 Nuestros Ideales</h2>
       <p>Visión, misión y propósito del Club.</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
     </section>
 
     <section id="galeria" class="oculto">
       <h2>📸 Nuestra Galería</h2>
       <p>Aquí estarán las evidencias fotográficas de las actividades realizadas.</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
     </section>
 
     <!-- Versículo -->
@@ -289,7 +290,7 @@
 
     <!-- Pie -->
     <footer>
-      <p>&copy; Club de Aventureros Horeb 2025</p>
+      <p>Copyright © 2025 | Club de Aventureros Horeb. Todos los derechos reservados.</p>
     </footer>
 
   </div>

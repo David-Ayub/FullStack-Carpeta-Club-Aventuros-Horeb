@@ -8,10 +8,12 @@
   padding: 10px 18px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: bold;
+  /*font-weight: bold;*/
   text-decoration: none;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   transition: background 0.3s ease, transform 0.2s ease;
+  font-family: 'Evil Empire', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 1px;
   z-index: 1000; /* Siempre arriba */
 }
 
@@ -25,12 +27,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* 🔒 Botón Bloqueo */
+@font-face {
+  font-family: 'Evil Empire'; /* <- aquí pones el nombre que quieras usar */
+  src: url('../fonts/evil-empire.otf') format('truetype'); /* <- aquí pones la ruta a tu archivo */
+  font-weight: normal;
+  font-style: normal;
+}
+.btn-bloqueo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #3f0905;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+  font-family: 'Evil Empire', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  z-index: 1000;
+}
+
+.btn-bloqueo:hover {
+  background: #7e140d;
+
+    transform: scale(1.05);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html, body {
     height: 100%;
     width: 100%;
     text-align: center;
-    color: #fff;
-    font-family: sans-serif;
+    color: #fcfbfa;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 /* 🔑 Fondo exclusivo de la pantalla de acceso */
 #acceso {
@@ -96,18 +135,52 @@ html, body {
 }
 
 /* Encabezado */
-header {
+/* 🔑 Mi fuente personalizada */
+@font-face {
+  font-family: 'Deep Shadow'; /* <- aquí pones el nombre que quieras usar */
+  src: url('../fonts/deep-shadow.ttf') format('truetype'); /* <- aquí pones la ruta a tu archivo */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 🔑 Utilizo mi fuente en el encabezado*//* tamaño de letra*/
+header h1 {
     background-color: rgba(44, 62, 80, 0.8);
-    color: white;
+    color: rgb(250, 233, 134);
     padding: 20px;
-    border-bottom: 5px solid #3498db;
+    font-family: 'Deep Shadow', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*font-weight: bold;*/
+    letter-spacing: 2px;
+    font-size: 30px;
+    
+    border-bottom: 2px solid rgba(52, 152, 219, 0.3); /* línea más tenue */
+    text-align: center; /* centra el texto */
+
+    /* Máquina de escribir */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    width: 27ch; /* ajusta según el texto */
+    margin: 0 auto; /* centra el contenedor de ancho fijo */
+    animation: typing 10s steps(27, end) infinite, blink 1s step-end infinite;
 }
 
-h1,
-h2 {
-    margin: 10px 0;
+/* Animación de escritura */
+@keyframes typing {
+    0%, 50% {
+        width: 0;
+    }
+    50%, 100% {
+        width: 27ch;
+    }
 }
 
+/* Animación del cursor parpadeante */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
 p,
 blockquote {
     font-size: 18px;
@@ -151,8 +224,8 @@ blockquote {
 footer {
     background-color: rgba(44, 62, 80, 0.8);
     color: white;
-    padding: 10px;
-    margin-top: 30px;
+    padding: -30px;
+    margin-top: 50px;
 }
 
 /* Ocultar secciones */
@@ -171,16 +244,37 @@ section {
 
 /* 🔹 SECCIÓN HOJAS DE VIDA DEL CLUB */
 
+/* 🔑 Mi fuente personalizada */
+@font-face {
+  font-family: 'Copyduck'; /* <- aquí pones el nombre que quieras usar */
+  src: url('../fonts/copyduck.ttf') format('truetype'); /* <- aquí pones la ruta a tu archivo */
+  font-weight: normal;
+  font-style: normal;
+}
 .encabezado-epico {
   text-align: center;
   font-size: 2.3rem;
   font-weight: bold;
   color: #ffcc00;
-  font-family: "Comic Sans MS", "Fredoka One", cursive;
+  font-family: 'Copyduck', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   letter-spacing: 2px;
   margin-bottom: 30px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
   text-transform: uppercase;
+  
+  /* Contorno blanco */
+  -webkit-text-stroke: 0.5px #fffffa; /* para Chrome/Safari */
+
+  /* Sombra suave */
+  text-shadow: 2px 2px 6px rgba(243, 239, 239, 0.5);
+
+  /* Animación mínima infinita */
+  animation: leve-flotacion 5s ease-in-out infinite;
+}
+
+/* Animación sutil */
+@keyframes leve-flotacion {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); } /* sube 3px y baja suavemente */
 }
 
 /* Subtítulos (Directiva, Miembros, Acompañantes) */
@@ -217,13 +311,23 @@ section {
   border-radius: 12px;
   text-align: center;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  transition: transform 0.3s, box-shadow 0.3s;
   background: #12276d;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: flotar 5s ease-in-out infinite alternate; /* flotación constante */
 }
 
+/* Hover: sobresalir y agrandar */
 #conocenos .tarjeta:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+  transform: translateY(-30px) scale(1.1); /* sobresale y agranda */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación de flotación constante */
+@keyframes flotar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
 }
 
 /* Imagen circular */
@@ -298,6 +402,7 @@ section {
   cursor: pointer;
   background: #06446d;
   color: white;
+  font-weight: bold;
   font-size: 12px;
   font-family: "Franklin Gothic Demi";
   transition: 0.3s;
@@ -310,7 +415,7 @@ section {
 #total-integrantes {
   font-size: 1rem; /* más pequeño */
   font-weight: bold;
-  color: #00000034;
+  color: #c51111; /* rojo oscuro */
   background: rgba(128, 48, 48, 0.85);
   display: inline-block;
   padding: 4px 10px;
@@ -326,6 +431,7 @@ section {
   padding: 6px 12px;
   border-radius: 8px;
   border: 1px solid #fdfdfd9a;
+  font-weight: bold;
   font-size: 14px;
   width: 60%;
   max-width: 300px;
@@ -344,6 +450,7 @@ section {
   align-items: center;
   z-index: 2000;
   padding: 20px;
+  font-family: 'Deep Shadow', 'Arial Narrow', Arial, sans-serif;
   box-sizing: border-box;
 }
 
@@ -383,4 +490,67 @@ section {
   font-weight: bold;
   cursor: pointer;
   z-index: 10; /* encima del iframe */
+}
+
+/* 🔰 Contenedor de botones en cuadrícula con perspectiva 3D */
+.botones {
+  display: grid;
+   grid-template-columns: repeat(3, 160px); /* 3 columnas de 160px cada una */
+  grid-template-rows: auto; /* filas automáticas según la cantidad de botones */
+  gap: 20px; /* espacio entre botones */
+  justify-content: center; /* centra toda la grid dentro del contenedor */
+  margin: 40px auto; /* separa de lo que esté arriba y abajo, mantiene centrado */
+  max-width: 900px; /* ancho máximo */
+  perspective: 800px; /* efecto 3D */
+}
+
+/* 🛡️ Estilo del escudo */
+.boton-escudo {
+  width: 180px;
+  height: 210px;
+  background: url("../img/fondos-pantalla/fondo-botones-inicio3.png") 
+              no-repeat center center / contain;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  animation: flotando 3s ease-in-out infinite;
+  transform-style: preserve-3d; /* 👈 habilita capas 3D */
+  z-index: 20;
+}
+
+.boton-escudo:hover::before {
+  opacity: 1;
+}
+
+/* 🎨 Texto debajo del escudo */
+.boton-escudo span {
+  position: absolute;
+  bottom: 15px; 
+  left: 50%;
+  transform: translateX(-50%); /* centrado horizontal */
+  z-index: 2;
+  color: rgb(243, 242, 236);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7), 0 0 10px #ffd700;
+  font-family: "Comic Sans MS", serif;
+  padding: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* 🚀 Efecto al pasar el mouse por el escudo o el texto */
+.boton-escudo:hover span {
+  transform: translateX(-50%) scale(1.3); /* zoom hacia adelante */
+  filter: drop-shadow(0 0 12px gold);
+}
+
+/* 🌊 Animación flotante del escudo */
+@keyframes flotando {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
 }
