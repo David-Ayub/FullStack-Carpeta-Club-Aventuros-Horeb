@@ -779,7 +779,38 @@ section {
 .grid-fotos {
   animation: subirBajar 5s ease-in-out infinite;
 }
-/* Animación para los botones de año 
-.btn-anio {
-  animation: subirBajar 5s ease-in-out infinite;
-}*/
+
+/*SECCIÓN DE ACTIVIDADES*/
+.pdf-cronograma {
+  width: 100%;          /* que ocupe todo el ancho disponible */
+  height: 90vh;         /* 90% del alto de la ventana */
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#iframe-cronograma {
+  width: 95%;
+  height: 100%;
+  border: 5px solid transparent; /* dejamos el borde transparente */
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+  background-size: 300% 300%;
+  animation: brillo 5s linear infinite; /* animación del degradado */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* brillo extra */
+}
+
+/* Para que se vea el degradado solo en el borde */
+#iframe-cronograma {
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+@keyframes brillo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
