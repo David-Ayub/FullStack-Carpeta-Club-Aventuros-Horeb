@@ -813,4 +813,28 @@ section {
   100% { background-position: 0% 50%; }
 }
 
+/*SECCIÓN DE CERTIFICADOS*/
+.botones-certificados {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
 
+.btn-certificado {
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.btn-certificado:hover {
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
