@@ -1,3 +1,25 @@
+/* 🔙 Botón fijo para volver al inicio */
+.btn-volver {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #3498db;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 1000; /* Siempre arriba */
+}
+
+.btn-volver:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -146,3 +168,219 @@ section {
     border-radius: 12px;
     max-width: 900px;
  }
+
+/* 🔹 SECCIÓN HOJAS DE VIDA DEL CLUB */
+
+.encabezado-epico {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #ffcc00;
+  font-family: "Comic Sans MS", "Fredoka One", cursive;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  text-transform: uppercase;
+}
+
+/* Subtítulos (Directiva, Miembros, Acompañantes) */
+#conocenos h3 {
+  text-align: center;
+  font-size: 1.2rem; /* más pequeño */
+  font-family: "Baloo 2", "Comic Neue", cursive;
+  color: #ffffff;
+  background: rgba(0,0,0,0.6); /* un solo color sobrio */
+  padding: 6px 0;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Grupos */
+#conocenos .grupo {
+  margin-bottom: 40px;
+}
+
+/* Tarjetas en cuadrícula */
+#conocenos .tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  justify-items: center;
+}
+
+/* Tarjeta general */
+#conocenos .tarjeta {
+  width: 180px;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #12276d;
+}
+
+#conocenos .tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* Imagen circular */
+#conocenos .tarjeta img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+/* Directiva */
+#conocenos .tarjeta.directiva {
+  background: #fff8dc;
+  border: 2px solid gold;
+}
+#conocenos .tarjeta.directiva img {
+  border: 3px solid gold;
+}
+.tarjeta.directiva h4 {
+  color: #70662a;
+  font-weight: bold;
+}
+
+/* Miembros hombres */
+#conocenos .tarjeta.miembro {
+  background: #eaf6ff;
+  border: 2px solid #3498db;
+}
+#conocenos .tarjeta.miembro img {
+  border: 3px solid #3498db;
+}
+.tarjeta.miembro h4 {
+  color: #163d57;
+  font-weight: bold;
+}
+
+/* Miembros mujeres */
+#conocenos .tarjeta.miembro.mujer {
+  background: #f5dfea;
+  border: 2px solid #6a0dad;
+  color: #4e124e;
+}
+#conocenos .tarjeta.miembro.mujer img {
+  border: 3px solid #6a0dad;
+}
+.tarjeta.miembro.mujer h4 {
+  color: #6a0dad;
+  font-weight: bold;
+}
+
+/* Acompañantes */
+#conocenos .tarjeta.acompanante {
+  background: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+}
+#conocenos .tarjeta.acompanante img {
+  border: 3px solid #000000;
+}
+#conocenos .tarjeta.acompanante h4 {
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Botón dentro de tarjetas */
+#conocenos .tarjeta button {
+  margin-top: 6px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #06446d;
+  color: white;
+  font-size: 12px;
+  font-family: "Franklin Gothic Demi";
+  transition: 0.3s;
+}
+#conocenos .tarjeta button:hover {
+  background: #27ae60;
+}
+
+/* 🔹 Contador de integrantes */
+#total-integrantes {
+  font-size: 1rem; /* más pequeño */
+  font-weight: bold;
+  color: #00000034;
+  background: rgba(128, 48, 48, 0.85);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* 🔹 Barra de búsqueda */
+#busqueda-nombre {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #fdfdfd9a;
+  font-size: 14px;
+  width: 60%;
+  max-width: 300px;
+}
+
+/* Modal oculto por defecto */
+.modal-oculto {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contenido del modal */
+.modal-contenido {
+  position: relative;
+  width: 32%;      /* Puedes ajustar desde JS si quieres tamaños diferentes */
+  height: 100%;     /* Igual que arriba */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Iframe ocupa todo el modal pero centrado y escalado */
+#iframe-pdf {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: contain; /* Ajusta el PDF completo */
+}
+
+/* Botón de cerrar: siempre arriba del iframe */
+#cerrar-modal {
+  position: fixed; /* dentro del modal */
+  top: 6px;
+  right: 410px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #3f0905;
+  color: #ddd;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10; /* encima del iframe */
+}
