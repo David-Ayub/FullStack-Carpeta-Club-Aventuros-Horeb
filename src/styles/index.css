@@ -16,12 +16,10 @@
   letter-spacing: 1px;
   z-index: 1000; /* Siempre arriba */
 }
-
 .btn-volver:hover {
   background: #2980b9;
   transform: scale(1.05);
 }
-
 *{
     margin: 0;
     padding: 0;
@@ -52,13 +50,11 @@
   letter-spacing: 1px;
   z-index: 1000;
 }
-
 .btn-bloqueo:hover {
   background: #7e140d;
 
     transform: scale(1.05);
 }
-
 *{
     margin: 0;
     padding: 0;
@@ -104,6 +100,7 @@ html, body {
     border-radius: 8px;
     margin-top: 10px;
     width: 80%;
+    font-family: 'Evil Empire', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
 
@@ -114,6 +111,7 @@ html, body {
     border: none;
     border-radius: 10px;
     background-color: #3498db;
+    font-family: 'Evil Empire', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     cursor: pointer;
     transition: 0.3s;
@@ -455,12 +453,12 @@ section {
 }
 
 /* Contenido del modal */
-.modal-contenido {
+.modal-contenido-pdf {
   position: relative;
-  width: 32%;      /* Puedes ajustar desde JS si quieres tamaños diferentes */
-  height: 100%;     /* Igual que arriba */
-  background: #fff;
-  border-radius: 12px;
+  width: 15%;   /* <-- cámbialo aquí */
+  height: 10%;
+  background: #b0c0df;
+  border-radius: 9px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -468,19 +466,28 @@ section {
   flex-direction: column;
 }
 
+/* 👇 Ajusta el PDF dentro */
+.modal-contenido-pdf embed,
+.modal-contenido-pdf iframe {
+  width: 10%;
+  height: 10%;
+  object-fit: contain; /* evita que se deforme */
+}
+
+
 /* Iframe ocupa todo el modal pero centrado y escalado */
 #iframe-pdf {
-  width: 100%;
-  height: 100%;
+  width: 99%;
+  height: 99%;
   border: none;
   object-fit: contain; /* Ajusta el PDF completo */
 }
 
 /* Botón de cerrar: siempre arriba del iframe */
-#cerrar-modal {
-  position: fixed; /* dentro del modal */
+#cerrar-modal-pdf {
+  position: fixed; /* sobre el modal */
   top: 6px;
-  right: 410px;
+  right: 360px;
   padding: 6px 10px;
   border: none;
   border-radius: 5px;
@@ -554,3 +561,256 @@ section {
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
 }
+
+/* Botones de años */
+.botones-historia {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.btn-anio {
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.btn-anio:hover {
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+/* Contenedor de fotos */
+.fotos-historia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+/* Estilo de imágenes */
+.fotos-historia img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.fotos-historia img:hover {
+  transform: scale(1.1);
+}
+
+/* PDF historia integrado */
+.pdf-historia {
+  width: 90%;
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pdf-historia iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 📸 SECCIÓN HISTORIA */
+/* Contenedor principal de recuerdos (carrusel + grid) */
+/* VER IMAGEN EN GRANDE */
+.seccion-recuerdos {
+  display: flex;
+  flex-direction: column; /* uno encima del otro */
+  align-items: center;    /* centrar horizontalmente */
+  gap: 20px;              /* espacio entre carrusel y grid */
+  margin-top: 20px;
+}
+
+/* Carrusel arriba */
+.carrusel {
+  width: 55%;
+  max-width: 700px;
+  height:240px;
+  border: 5px solid gold;
+  border-radius: 12px;
+  overflow: hidden;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* necesario para posicionamiento absoluto de las imágenes */
+}
+
+/* Imagen del carrusel con transición de deslizamiento */
+.carrusel img {
+  position: absolute;   /* permite mover con left */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* no recorta la imagen */
+  border-radius: 8px;
+  transition: left 0.3s ease-in-out, opacity 0.4s ease-in-out; /* deslizamiento suave */
+  opacity: 1;
+}
+
+/* Grid de fotos debajo */
+.grid-fotos {
+  display: none;          /* oculto al inicio */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 9px 20px; /* 9px entre filas (vertical), 20px entre columnas (horizontal) */
+  width: 100%;
+  justify-items: center;
+}
+
+/* Miniaturas */
+.grid-fotos img {
+  width: 110%;
+  height:95px;
+  object-fit: cover;      /* llena sin deformar */
+  border: 3px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-fotos img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+/* Botón flotante "Volver a Historia" */
+.btn-volver-historia {
+  position: fixed;           /* flota por encima del contenido */
+  bottom: 490px;              /* separación desde el fondo (ajústalo si quieres) */
+  right: 1210px;               /* separación desde la derecha */
+  z-index: 999;              /* sobre todo lo demás */
+  padding: 10px 10px;
+  background-color: rgb(221, 219, 208);    /* dorado */
+  color: rgb(34, 27, 27);
+  border: none;
+  border-radius: 50px;       /* estilo más moderno tipo cápsula */
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Evil Empire', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 12px rgba(14, 6, 6, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+  display: none;             /* oculto al inicio */
+}
+/* VER IMAGEN EN GRANDE */
+/* Modal completo (fondo negro semitransparente) */
+#modal-contenido-img {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0; left: 0;
+  width: 20%;
+  height: 20%;
+  background: rgba(0,0,0,0.85);  /* 👈 fondo negro translúcido */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Contenido del modal sin fondo extra */
+.modal-contenido-img {
+  position: relative;
+  max-width: 40%;
+  max-height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;  /* 👈 eliminamos el fondo azul */
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Imagen dentro del modal */
+#img-modal {
+  max-width: 44%;
+  max-height: 44%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+/* Botón cerrar solo con la X */
+#cerrar-foto {
+  position: fixed;   /* posición respecto a modal-contenido */
+  top: 20px;
+  right: 400px;
+  font-size: 70px;
+  font-weight: bold;
+  color: #fff;
+  background: none !important;  /* elimina cualquier fondo heredado */
+  border: none !important;      /* elimina bordes */
+  padding: 0 !important;        /* elimina relleno */
+  font-family: 'Evil Empire', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1;               /* ajusta la altura de línea */
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.btn-volver-historia:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+/* Animación de subir y bajar */
+@keyframes subirBajar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* altura de movimiento */
+  }
+}
+/* Aplicar animación al carrusel */
+.carrusel {
+  animation: subirBajar 5s ease-in-out infinite;
+}
+/* Aplicar animación al grid de fotos */
+.grid-fotos {
+  animation: subirBajar 5s ease-in-out infinite;
+}
+
+/*SECCIÓN DE ACTIVIDADES*/
+.pdf-cronograma {
+  width: 100%;          /* que ocupe todo el ancho disponible */
+  height: 90vh;         /* 90% del alto de la ventana */
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#iframe-cronograma {
+  width: 95%;
+  height: 100%;
+  border: 5px solid transparent; /* dejamos el borde transparente */
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+  background-size: 300% 300%;
+  animation: brillo 5s linear infinite; /* animación del degradado */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* brillo extra */
+}
+
+/* Para que se vea el degradado solo en el borde */
+#iframe-cronograma {
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+@keyframes brillo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
