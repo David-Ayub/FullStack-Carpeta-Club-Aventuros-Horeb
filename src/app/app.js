@@ -54,31 +54,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Función para mostrar secciones dentro de #content
-  window.mostrarSeccion = function (id) {
-    document.querySelectorAll("#content section").forEach((sec) =>
-      sec.classList.add("oculto")
-    );
-    const seccion = document.getElementById(id);
-    if (seccion) seccion.classList.remove("oculto");
+  // Función para mostrar secciones con animación
+window.mostrarSeccion = function (id) {
+  // Ocultar todas
+  document.querySelectorAll("#content section").forEach((sec) => {
+    sec.classList.remove("seccion-activa");
+    sec.classList.add("oculto");
+  });
 
-    // Botones según la sección
-    if (btnVolver) btnVolver.style.display = id === "inicio" ? "none" : "block";
-    if (btnBloqueo) btnBloqueo.style.display = id === "inicio" ? "block" : "none";
-  };
+  // Mostrar la seleccionada con animación
+  const seccion = document.getElementById(id);
+  if (seccion) {
+    seccion.classList.remove("oculto");
+    seccion.classList.add("seccion-activa");
+  }
+
+  // Botones según la sección
+  if (btnVolver) btnVolver.style.display = id === "inicio" ? "none" : "block";
+  if (btnBloqueo) btnBloqueo.style.display = id === "inicio" ? "block" : "none";
+};
+
   // Función para verificar clave de acceso
-  window.verificarClave = function () {
-    const clave = inputClave.value;
-    const error = document.getElementById("mensaje-error");
+window.verificarClave = function () {
+  const clave = inputClave.value;
+  const error = document.getElementById("mensaje-error");
+  const contenedorVersiculo = document.getElementById("versiculo");
 
-    if (clave === "1995") {
-      acceso.style.display = "none";
-      content.style.display = "block";
-      mostrarSeccion("inicio");
-    } else {
-      if (error) error.style.display = "block";
-    }
-  };
+  if (clave === "1995") {
+    // Oculta pantalla de acceso y muestra contenido
+    acceso.style.display = "none";
+    content.style.display = "block";
+    mostrarSeccion("inicio");
+
+    // Ocultar mensaje de error por si estaba visible
+    if (error) error.style.display = "none";
+
+  } else {
+    // Mostrar mensaje de error
+    if (error) error.style.display = "block";
+    // Ocultar versículo si la clave es incorrecta
+    if (contenedorVersiculo) contenedorVersiculo.style.display = "none";
+  }
+};
+
 
   // Enter en el campo clave
   if (inputClave) {
@@ -267,4 +285,103 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.style.display = 'none';
   });
+});
+
+// =============================
+// 📸 SECCIÓN GALERÍA
+// =============================
+
+let intervaloGaleria;
+
+function cargarGaleria() {
+  fetch("src/img/galeria-horeb-2025/galeria.json")
+    .then(res => {
+      if (!res.ok) throw new Error("No se pudo cargar el JSON de galería");
+      return res.json();
+    })
+    .then(fotos => {
+      console.log("✅ Fotos cargadas:", fotos);
+
+      const carrusel = document.getElementById("carrusel-galeria");
+      const grid = document.getElementById("grid-galeria");
+
+      carrusel.innerHTML = "";
+      grid.innerHTML = "";
+
+      if (!fotos || fotos.length === 0) {
+        carrusel.innerHTML = "<p>No hay fotos en el JSON</p>";
+        return;
+      }
+
+      // ---- Carrusel ----
+      let indice = 0;
+      const imgCarrusel = document.createElement("img");
+      imgCarrusel.src = `src/img/galeria-horeb-2025/${fotos[indice]}`;
+      imgCarrusel.alt = "Foto de la galería";
+      imgCarrusel.style.objectFit = "contain";
+      imgCarrusel.style.width = "100%";
+      imgCarrusel.style.height = "100%";
+      carrusel.appendChild(imgCarrusel);
+
+      if (intervaloGaleria) clearInterval(intervaloGaleria);
+
+      intervaloGaleria = setInterval(() => {
+        indice = (indice + 1) % fotos.length;
+        imgCarrusel.src = `src/img/galeria-horeb-2025/${fotos[indice]}`;
+      }, 3000);
+
+      // ---- Grid ----
+      fotos.forEach(foto => {
+        const contenedor = document.createElement("div");
+        const img = document.createElement("img");
+        img.src = `src/img/galeria-horeb-2025/${foto}`;
+        img.alt = "Foto de la galería";
+
+        // 📌 Click en la imagen = abrir modal
+        img.addEventListener("click", () => {
+          abrirModalFoto(img.src);
+        });
+
+        contenedor.appendChild(img);
+        grid.appendChild(contenedor);
+      });
+    })
+    .catch(err => console.error("❌ Error cargando galería:", err));
+}
+
+// ======================
+// 📌 MODAL
+// ======================
+function abrirModalFoto(src) {
+  const modal = document.getElementById("modal-galeria");
+  const modalImg = document.getElementById("modal-img");
+
+  modalImg.src = src;
+  modal.classList.remove("hidden");
+}
+
+// Botón de cerrar
+document.getElementById("cerrar-modal").addEventListener("click", () => {
+  document.getElementById("modal-galeria").classList.add("hidden");
+});
+
+// Cerrar modal haciendo clic fuera de la imagen
+document.getElementById("modal-galeria").addEventListener("click", (e) => {
+  if (e.target.id === "modal-galeria") {
+    document.getElementById("modal-galeria").classList.add("hidden");
+  }
+});
+
+// ======================
+// 📌 BOTÓN GALERÍA
+// ======================
+document.addEventListener("DOMContentLoaded", () => {
+  const btnGaleria = document.querySelector("[onclick=\"mostrarSeccion('galeria')\"]");
+
+  if (btnGaleria) {
+    btnGaleria.addEventListener("click", () => {
+      mostrarSeccion("galeria");
+      cargarGaleria();
+    });
+  }
 });

@@ -178,7 +178,7 @@
           <div class="tarjeta miembro">
             <img src="./src/img/fotos-hojas-de-vida/foto-herly-diaz.jpg" alt="Herly Diaz">
             <h4>Herly Diaz Batista</h4>
-             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/herly-diaz-batista', '40%', '100%')">Ver Hoja de Vida</button>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/herly-diaz-batista.pdf', '40%', '100%')">Ver Hoja de Vida</button>
           </div>
           <div class="tarjeta miembro">
             <img src="./src/img/fotos-hojas-de-vida/foto-jhonier-gallego.jpg" alt="Jhonier Gallego">
@@ -374,11 +374,20 @@
   </div>
  </section>
 
+ <!-- 📸 SECCION GALERIA -->
+ <section id="galeria" class="oculto">
+   <h2 class="encabezado-epico">📸 Galería de Actividades 2025</h2>
+   <div id="carrusel-galeria" class="carrusel"></div>
+   <div id="grid-galeria" class="grid-fotos"></div>
 
-    <section id="galeria" class="oculto">
-      <h2>📸 Nuestra Galería</h2>
-      <p>Aquí estarán las evidencias fotográficas de las actividades realizadas.</p>
-    </section>
+   <!-- 📌 Modal Galería -->
+   <div id="modal-galeria" class="hidden">
+     <span id="cerrar-modal">&times;</span>
+     <img id="modal-img" src="" alt="Foto en grande">
+   </div>
+
+  </section>
+
 
     <section id="certificados" class="oculto">
   <h2 class="encabezado-epico">📜 Certificados de Actividades 2025 </h2>
@@ -398,14 +407,12 @@
   </div>
 </section>
 
-    <!-- Versículo -->
-    <section>
-      <h2>Versículo Principal ✨</h2>
-      <blockquote>
-        "Y Noé hizo conforme a todo lo que Jehová le mandó." <br>
-        <em>Génesis 7:5</em>
-      </blockquote>
-    </section>
+    <!-- Versículo 
+ <section>
+   <h2>Versículo Principal ✨</h2>
+   <div id="versiculo" style="display:none;"></div>
+ </section>-->
+
 
     <!-- Pie -->
     <footer>
@@ -424,5 +431,15 @@
      <iframe id="iframe-pdf"></iframe>
    </div>
  </div>
+
+ <!-- Logo del Club -->
+ <div id="logo-club">
+   <img src="./src/img/logo-horeb.png" alt="Logo Horeb" />
+ </div>
+ <!-- Logo del Campamento -->
+ <div id="logo-campamento">
+   <img src="./src/img/logo-campamento.png" alt="Logo Campamento" />
+ </div>
+
 
 </body>
