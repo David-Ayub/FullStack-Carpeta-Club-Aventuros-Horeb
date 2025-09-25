@@ -1,11 +1,72 @@
-body {
-    font-family: Arial, sans-serif;
+/* 🔙 Botón fijo para volver al inicio */
+.btn-volver {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #3498db;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  /*font-weight: bold;*/
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-family: 'Evil Empire', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 1px;
+  z-index: 1000; /* Siempre arriba */
+}
+.btn-volver:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+*{
     margin: 0;
     padding: 0;
-    text-align: center;
-    color: #fff;
+    box-sizing: border-box;
 }
 
+/* 🔒 Botón Bloqueo */
+@font-face {
+  font-family: 'Evil Empire'; /* <- aquí pones el nombre que quieras usar */
+  src: url('../fonts/evil-empire.otf') format('truetype'); /* <- aquí pones la ruta a tu archivo */
+  font-weight: normal;
+  font-style: normal;
+}
+.btn-bloqueo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #3f0905;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+  font-family: 'Evil Empire', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  z-index: 1000;
+}
+.btn-bloqueo:hover {
+  background: #7e140d;
+
+    transform: scale(1.05);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: #fcfbfa;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 /* 🔑 Fondo exclusivo de la pantalla de acceso */
 #acceso {
     position: fixed;
@@ -13,14 +74,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: #3498db; */
-    background-image: url(../img/fondo-de-bloqueo.png);
+    background-image: url(../img/gif/barco-de-fondo4.gif);
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+    /* z-index: 9999; */
 }
 
 .acceso-box {
@@ -38,6 +100,7 @@ body {
     border-radius: 8px;
     margin-top: 10px;
     width: 80%;
+    font-family: 'Evil Empire', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
 
@@ -48,6 +111,7 @@ body {
     border: none;
     border-radius: 10px;
     background-color: #3498db;
+    font-family: 'Evil Empire', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     cursor: pointer;
     transition: 0.3s;
@@ -69,18 +133,52 @@ body {
 }
 
 /* Encabezado */
-header {
+/* 🔑 Mi fuente personalizada */
+@font-face {
+  font-family: 'Deep Shadow'; /* <- aquí pones el nombre que quieras usar */
+  src: url('../fonts/deep-shadow.ttf') format('truetype'); /* <- aquí pones la ruta a tu archivo */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 🔑 Utilizo mi fuente en el encabezado*//* tamaño de letra*/
+header h1 {
     background-color: rgba(44, 62, 80, 0.8);
-    color: white;
+    color: rgb(250, 233, 134);
     padding: 20px;
-    border-bottom: 5px solid #3498db;
+    font-family: 'Deep Shadow', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*font-weight: bold;*/
+    letter-spacing: 2px;
+    font-size: 30px;
+    
+    border-bottom: 2px solid rgba(52, 152, 219, 0.3); /* línea más tenue */
+    text-align: center; /* centra el texto */
+
+    /* Máquina de escribir */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    width: 27ch; /* ajusta según el texto */
+    margin: 0 auto; /* centra el contenedor de ancho fijo */
+    animation: typing 10s steps(27, end) infinite, blink 1s step-end infinite;
 }
 
-h1,
-h2 {
-    margin: 10px 0;
+/* Animación de escritura */
+@keyframes typing {
+    0%, 50% {
+        width: 0;
+    }
+    50%, 100% {
+        width: 27ch;
+    }
 }
 
+/* Animación del cursor parpadeante */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
 p,
 blockquote {
     font-size: 18px;
@@ -124,8 +222,8 @@ blockquote {
 footer {
     background-color: rgba(44, 62, 80, 0.8);
     color: white;
-    padding: 10px;
-    margin-top: 30px;
+    padding: -30px;
+    margin-top: 50px;
 }
 
 /* Ocultar secciones */
@@ -140,4 +238,884 @@ section {
     padding: 20px;
     border-radius: 12px;
     max-width: 900px;
+ }
+
+/* 🔹 SECCIÓN HOJAS DE VIDA DEL CLUB */
+
+/* 🔑 Mi fuente personalizada */
+@font-face {
+  font-family: 'Copyduck'; /* <- aquí pones el nombre que quieras usar */
+  src: url('../fonts/copyduck.ttf') format('truetype'); /* <- aquí pones la ruta a tu archivo */
+  font-weight: normal;
+  font-style: normal;
+}
+.encabezado-epico {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #ffcc00;
+  font-family: 'Copyduck', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  
+  /* Contorno blanco */
+  -webkit-text-stroke: 0.5px #fffffa; /* para Chrome/Safari */
+
+  /* Sombra suave */
+  text-shadow: 2px 2px 6px rgba(243, 239, 239, 0.5);
+
+  /* Animación mínima infinita */
+  animation: leve-flotacion 5s ease-in-out infinite;
+}
+
+/* Animación sutil */
+@keyframes leve-flotacion {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); } /* sube 3px y baja suavemente */
+}
+
+/* Subtítulos (Directiva, Miembros, Acompañantes) */
+#conocenos h3 {
+  text-align: center;
+  font-size: 1.2rem; /* más pequeño */
+  font-family: "Baloo 2", "Comic Neue", cursive;
+  color: #ffffff;
+  background: rgba(0,0,0,0.6); /* un solo color sobrio */
+  padding: 6px 0;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Grupos */
+#conocenos .grupo {
+  margin-bottom: 40px;
+}
+
+/* Tarjetas en cuadrícula */
+#conocenos .tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  justify-items: center;
+}
+
+/* Tarjeta general */
+#conocenos .tarjeta {
+  width: 180px;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: #12276d;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: flotar 5s ease-in-out infinite alternate; /* flotación constante */
+}
+
+/* Hover: sobresalir y agrandar */
+#conocenos .tarjeta:hover {
+  transform: translateY(-30px) scale(1.1); /* sobresale y agranda */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación de flotación constante */
+@keyframes flotar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Imagen circular */
+#conocenos .tarjeta img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+/* Directiva */
+#conocenos .tarjeta.directiva {
+  background: #fff8dc;
+  border: 2px solid gold;
+}
+#conocenos .tarjeta.directiva img {
+  border: 3px solid gold;
+}
+.tarjeta.directiva h4 {
+  color: #70662a;
+  font-weight: bold;
+}
+
+/* Miembros hombres */
+#conocenos .tarjeta.miembro {
+  background: #eaf6ff;
+  border: 2px solid #3498db;
+}
+#conocenos .tarjeta.miembro img {
+  border: 3px solid #3498db;
+}
+.tarjeta.miembro h4 {
+  color: #163d57;
+  font-weight: bold;
+}
+
+/* Miembros mujeres */
+#conocenos .tarjeta.miembro.mujer {
+  background: #f5dfea;
+  border: 2px solid #6a0dad;
+  color: #4e124e;
+}
+#conocenos .tarjeta.miembro.mujer img {
+  border: 3px solid #6a0dad;
+}
+.tarjeta.miembro.mujer h4 {
+  color: #6a0dad;
+  font-weight: bold;
+}
+
+/* Acompañantes */
+#conocenos .tarjeta.acompanante {
+  background: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+}
+#conocenos .tarjeta.acompanante img {
+  border: 3px solid #000000;
+}
+#conocenos .tarjeta.acompanante h4 {
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Botón dentro de tarjetas */
+#conocenos .tarjeta button {
+  margin-top: 6px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #06446d;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: "Franklin Gothic Demi";
+  transition: 0.3s;
+}
+#conocenos .tarjeta button:hover {
+  background: #27ae60;
+}
+
+/* 🔹 Contador de integrantes */
+#total-integrantes {
+  font-size: 1rem; /* más pequeño */
+  font-weight: bold;
+  color: #c51111; /* rojo oscuro */
+  background: rgba(128, 48, 48, 0.85);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* 🔹 Barra de búsqueda */
+#busqueda-nombre {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #fdfdfd9a;
+  font-weight: bold;
+  font-size: 14px;
+  width: 60%;
+  max-width: 300px;
+}
+
+/* Modal oculto por defecto */
+.modal-oculto {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  font-family: 'Deep Shadow', 'Arial Narrow', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Contenido del modal */
+.modal-contenido-pdf {
+  position: relative;
+  width: 15%;   /* <-- cámbialo aquí */
+  height: 10%;
+  background: #b0c0df;
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* 👇 Ajusta el PDF dentro */
+.modal-contenido-pdf embed,
+.modal-contenido-pdf iframe {
+  width: 10%;
+  height: 10%;
+  object-fit: contain; /* evita que se deforme */
+}
+
+
+/* Iframe ocupa todo el modal pero centrado y escalado */
+#iframe-pdf {
+  width: 99%;
+  height: 99%;
+  border: none;
+  object-fit: contain; /* Ajusta el PDF completo */
+}
+
+/* Botón de cerrar: siempre arriba del iframe */
+#cerrar-modal-pdf {
+  position: fixed; /* sobre el modal */
+  top: 6px;
+  right: 360px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #3f0905;
+  color: #ddd;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10; /* encima del iframe */
+}
+
+/* 🔰 Contenedor de botones en cuadrícula con perspectiva 3D */
+.botones {
+  display: grid;
+   grid-template-columns: repeat(3, 160px); /* 3 columnas de 160px cada una */
+  grid-template-rows: auto; /* filas automáticas según la cantidad de botones */
+  gap: 20px; /* espacio entre botones */
+  justify-content: center; /* centra toda la grid dentro del contenedor */
+  margin: 40px auto; /* separa de lo que esté arriba y abajo, mantiene centrado */
+  max-width: 900px; /* ancho máximo */
+  perspective: 800px; /* efecto 3D */
+}
+
+/* 🛡️ Estilo del escudo */
+.boton-escudo {
+  width: 180px;
+  height: 210px;
+  background: url("../img/fondos-pantalla/fondo-botones-inicio3.png") 
+              no-repeat center center / contain;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  animation: flotando 3s ease-in-out infinite;
+  transform-style: preserve-3d; /* 👈 habilita capas 3D */
+  z-index: 20;
+}
+
+.boton-escudo:hover::before {
+  opacity: 1;
+}
+
+/* 🎨 Texto debajo del escudo */
+.boton-escudo span {
+  position: absolute;
+  bottom: 15px; 
+  left: 50%;
+  transform: translateX(-50%); /* centrado horizontal */
+  z-index: 2;
+  color: rgb(243, 242, 236);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7), 0 0 10px #ffd700;
+  font-family: "Comic Sans MS", serif;
+  padding: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* 🚀 Efecto al pasar el mouse por el escudo o el texto */
+.boton-escudo:hover span {
+  transform: translateX(-50%) scale(1.3); /* zoom hacia adelante */
+  filter: drop-shadow(0 0 12px gold);
+}
+
+/* 🌊 Animación flotante del escudo */
+@keyframes flotando {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Botones de años */
+.botones-historia {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.btn-anio {
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.btn-anio:hover {
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+/* Contenedor de fotos */
+.fotos-historia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+/* Estilo de imágenes */
+.fotos-historia img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.fotos-historia img:hover {
+  transform: scale(1.1);
+}
+
+/* PDF historia integrado */
+.pdf-historia {
+  width: 90%;
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pdf-historia iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 📸 SECCIÓN HISTORIA */
+/* Contenedor principal de recuerdos (carrusel + grid) */
+/* VER IMAGEN EN GRANDE */
+.seccion-recuerdos {
+  display: flex;
+  flex-direction: column; /* uno encima del otro */
+  align-items: center;    /* centrar horizontalmente */
+  gap: 20px;              /* espacio entre carrusel y grid */
+  margin-top: 20px;
+}
+
+/* Carrusel arriba */
+.carrusel {
+  width: 55%;
+  max-width: 700px;
+  height:240px;
+  border: 5px solid gold;
+  border-radius: 12px;
+  overflow: hidden;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* necesario para posicionamiento absoluto de las imágenes */
+}
+
+/* Carrusel arriba */
+.carrusel {
+  width: 55%;
+  max-width: 700px;
+  height:240px;
+  border: 5px solid gold;
+  border-radius: 12px;
+  overflow: hidden;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* necesario para posicionamiento absoluto de las imágenes */
+}
+
+/* Grid de fotos debajo */
+.grid-fotos {
+  display: none;          /* oculto al inicio */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 9px 20px; /* 9px entre filas (vertical), 20px entre columnas (horizontal) */
+  width: 100%;
+  justify-items: center;
+}
+
+/* Miniaturas */
+.grid-fotos img {
+  width: 110%;
+  height:95px;
+  object-fit: cover;      /* llena sin deformar */
+  border: 3px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-fotos img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+/* Botón flotante "Volver a Historia" */
+.btn-volver-historia {
+  position: fixed;           /* flota por encima del contenido */
+  bottom: 490px;              /* separación desde el fondo (ajústalo si quieres) */
+  right: 1210px;               /* separación desde la derecha */
+  z-index: 999;              /* sobre todo lo demás */
+  padding: 10px 10px;
+  background-color: rgb(221, 219, 208);    /* dorado */
+  color: rgb(34, 27, 27);
+  border: none;
+  border-radius: 50px;       /* estilo más moderno tipo cápsula */
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Evil Empire', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 12px rgba(14, 6, 6, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+  display: none;             /* oculto al inicio */
+}
+/* VER IMAGEN EN GRANDE */
+/* Modal completo (fondo negro semitransparente) */
+#modal-contenido-img {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0; left: 0;
+  width: 20%;
+  height: 20%;
+  background: rgba(0,0,0,0.85);  /* 👈 fondo negro translúcido */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Contenido del modal sin fondo extra */
+.modal-contenido-img {
+  position: relative;
+  max-width: 40%;
+  max-height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none !important;  /* 👈 eliminamos el fondo azul */
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Imagen dentro del modal */
+#img-modal {
+  max-width: 44%;
+  max-height: 44%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+/* Botón cerrar solo con la X */
+#cerrar-foto {
+  position: fixed;   /* posición respecto a modal-contenido */
+  top: 20px;
+  right: 400px;
+  font-size: 70px;
+  font-weight: bold;
+  color: #fff;
+  background: none !important;  /* elimina cualquier fondo heredado */
+  border: none !important;      /* elimina bordes */
+  padding: 0 !important;        /* elimina relleno */
+  font-family: 'Evil Empire', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1;               /* ajusta la altura de línea */
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.btn-volver-historia:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+/* Animación de subir y bajar */
+@keyframes subirBajar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* altura de movimiento */
+  }
+}
+/* Aplicar animación al carrusel */
+.carrusel {
+  animation: subirBajar 5s ease-in-out infinite;
+}
+/* Aplicar animación al grid de fotos */
+.grid-fotos {
+  animation: subirBajar 5s ease-in-out infinite;
+}
+
+/*SECCIÓN DE ACTIVIDADES*/
+.pdf-cronograma {
+  width: 100%;          /* que ocupe todo el ancho disponible */
+  height: 90vh;         /* 90% del alto de la ventana */
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#iframe-cronograma {
+  width: 95%;
+  height: 100%;
+  border: 5px solid transparent; /* dejamos el borde transparente */
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+  background-size: 300% 300%;
+  animation: brillo 5s linear infinite; /* animación del degradado */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* brillo extra */
+}
+
+/* Para que se vea el degradado solo en el borde */
+#iframe-cronograma {
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+@keyframes brillo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/*SECCIÓN DE CERTIFICADOS*/
+.botones-certificados {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.btn-certificado {
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.btn-certificado:hover {
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+
+/* ============================= */
+/* SECCIÓN IDEALES */
+/* ============================= */
+#ideales {
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+#ideales .subtitulo-seccion {
+  margin-bottom: 2rem;
+}
+
+/* Contenedor de todas las tarjetas */
+.contenedor-ideales {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.0rem;
+  margin-top: 2rem;
+}
+
+/* Estilo base de las tarjetas */
+.tarjeta-ideales {
+  background: #ffffff15;
+  border: 2px solid #00bfff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+/* Hover con efecto brillante */
+.tarjeta-ideales:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.6);
+  border-color: #1e90ff;
+}
+
+/* Títulos dentro de las tarjetas */
+.tarjeta-ideales h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #74d6dd;
+  text-shadow: 0 0 6px rgba(29, 32, 32, 0.8);
+}
+
+/* Listas */
+.tarjeta-ideales ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.tarjeta-ideales ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+/* Iconito de estrella en los li */
+.tarjeta-ideales ul li::before {
+  content: "⭐";
+  position: absolute;
+  left: 0;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* TIPOGRAFÍA IDEALES (Comic Sans) */
+/* ============================= */
+.tarjeta-ideales,
+.tarjeta-ideales h3,
+.tarjeta-ideales p,
+.tarjeta-ideales ul,
+.tarjeta-ideales li {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+/* ============================= */
+/* TARJETA DESTACADA - QUIÉNES SOMOS */
+/* ============================= */
+.tarjeta-destacada {
+  grid-column: 1 / -1; /* Ocupa todo el ancho de la grid */
+  padding: 2.5rem;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #00bfff33, #1e90ff33);
+  border: 3px solid #1e90ff;
+  box-shadow: 0 8px 30px rgba(213, 227, 231, 0.5);
+  border-radius: 25px;
+  text-align: justify;
+}
+
+.tarjeta-destacada h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #8beedd;
+  text-align: center;
+  text-shadow: 0 0 8px rgb(71, 71, 48);
+}
+
+.tarjeta-destacada p {
+  line-height: 1.7;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+/* Solo para la tarjeta de propósitos */
+/* Tarjeta de valores con misma apariencia pero más corta */
+.tarjeta-ideales.tarjeta-propositos {
+  max-height: 500px; /* altura máxima deseada */
+  overflow-y: auto;  /* si el texto excede, aparece scroll dentro de la tarjeta */
+}
+
+.tarjeta-ideales.tarjeta-lema {
+  max-height: 200px; /* altura máxima deseada */
+  overflow-y: auto;  /* si el texto excede, aparece scroll dentro de la tarjeta */
+}
+
+/* Carrusel arriba */
+.carrusel-galeria {
+  width: 55%;
+  max-width: 700px;
+  height:240px;
+  border: 5px solid gold;
+  border-radius: 12px;
+  overflow: hidden;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* necesario para posicionamiento absoluto de las imágenes */
+  margin: 0 auto; /* esto lo centra horizontalmente */
+}
+#carrusel-galeria img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+
+#grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#grid-galeria div {
+  width: 100%;
+  aspect-ratio: 4 / 2;  /* 🔹 Cuadrado perfecto */
+  background: #000;     /* 🔹 Marco negro */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#grid-galeria img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* 🔹 La foto se ve completa */
+}
+
+#grid-galeria img:hover {
+  transform: scale(1.05);
+}
+
+#modal-galeria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+}
+
+#modal-galeria.hidden {
+  display: none;
+}
+
+#modal-galeria img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+#cerrar-modal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+/* 🔥 Animación suave al mostrar secciones */
+.oculto {
+  display: none !important;
+  opacity: 0;
+}
+
+.seccion-activa {
+  display: block !important;
+  animation: aparecer 0.6s ease forwards;
+}
+
+/* 🎬 Animación Fade + Slide */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* un pequeño desliz hacia arriba */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body #logo-club {
+  position: fixed;
+  top: 465px;
+  left: 30px;
+  z-index: 1000;
+}
+#logo-club img {
+  width: 80px;
+  height: auto;
+  animation: girarFlotar 5s ease-in-out infinite alternate;
+}
+@keyframes girarFlotar {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(10deg) translateY(-15px);
+  }
+  100% {
+    transform: rotate(-10deg) translateY(0px);
+  }
+}
+
+body #logo-campamento {
+  position: fixed;
+  top: 450px;
+  left: 1200px;
+  z-index: 1000;
+}
+#logo-campamento img {
+  width: 130px;
+  height: auto;
+  animation: girarFlotar 5s ease-in-out infinite alternate;
+}
+@keyframes girarFlotar {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(10deg) translateY(-15px);
+  }
+  100% {
+    transform: rotate(-10deg) translateY(0px);
+  }
 }

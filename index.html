@@ -7,11 +7,17 @@
   <title>Carpeta del Club de Aventureros</title>
 </head>
 <body>
+  <!-- 🔙 Botón volver a inicio -->
+  <a href="#acceso" id="btn-volver" class="btn-volver">🏠 Inicio</a>
+
+  <!-- 🔒 Botón que bloquea-->
+  <button id="btn-bloqueo" class="btn-bloqueo" onclick="volverAlBloqueo()">🔒 Salir</button>
+
   <!-- Pantalla de Acceso -->
   <div id="acceso">
     <div class="acceso-box">
       <h2>🔑 Acceso a la Carpeta</h2>
-      <p>Ingrese el año de fundación de la Asociación Centro Occidental de los Adventistas del Séptimo Día</p>
+      <p>Para acceder al contenido de la carpeta, por favor solicite la clave de acceso al administrador del sistema.</p>
       <input type="password" id="clave" placeholder="Escribe la clave">
       <button onclick="verificarClave()">Entrar</button>
       <p id="mensaje-error" style="color: rgb(255, 196, 0); display: none;">❌ Parece que te equivocastes, por favor ingresa la clave correcta</p>
@@ -23,8 +29,7 @@
 
     <!-- Encabezado -->
     <header>
-      <h1>Club de Aventureros Horeb</h1>
-      <h2>"Conquistando la cima"</h2>
+      <h1>CLUB DE AVENTUREROS HOREB</h1>
     </header>
 
     <!-- Pantalla de Inicio -->
@@ -36,63 +41,405 @@
         ¡Cristo hará de ellos pequeños misioneros."
       </p>
 
-      <div class="botones">
-        <button onclick="mostrarSeccion('conocenos')">👤 Conócenos</button>
-        <button onclick="mostrarSeccion('historia')">📖 Nuestra Historia</button>
-        <button onclick="mostrarSeccion('actividades')">🎲 Nuestras Actividades</button>
-        <button onclick="mostrarSeccion('ideales')">🧬 Nuestros Ideales</button>
-        <button onclick="mostrarSeccion('galeria')">📸 Nuestra Galería</button>
-      </div>
+      <div class="botones-fondo">
+       <div class="botones">
+        <div class="boton-escudo" onclick="mostrarSeccion('conocenos')">
+         <span>MIEMBROS</span>
+        </div>
+        <div class="boton-escudo" onclick="mostrarSeccion('historia')">
+         <span>HISTORIA</span>
+       </div>
+       <div class="boton-escudo" onclick="mostrarSeccion('actividades')">
+         <span>ACTIVIDADES</span>
+       </div>
+       <div class="boton-escudo" onclick="mostrarSeccion('ideales')">
+         <span>IDEALES</span>
+       </div>
+       <div class="boton-escudo" onclick="mostrarSeccion('galeria')">
+         <span>GALERIA</span>
+       </div>
+       <div class="boton-escudo" onclick="mostrarSeccion('certificados')">
+         <span>CERTIFICADOS</span>
+       </div>
+       </div>
+     </div>
     </section>
 
     <!-- Secciones internas -->
+     
+    <!-- SECCIÓN HOJAS DE VIDA -->
     <section id="conocenos" class="oculto">
-      <h2>👤 Conócenos</h2>
-      <p>Aquí van las hojas de vida de la directiva y aventureros.</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
+      <h2 class="encabezado-epico">Hojas de Vida del Club Horeb</h2>
+
+    <!-- 🔎 Barra de búsqueda -->
+    <div class="busqueda-container" style="text-align:center; margin: 20px 0;">
+     <input 
+    type="text" 
+    id="busqueda" 
+    placeholder="🔍 Buscar por nombre..." 
+    style="padding: 8px 12px; width: 250px; border-radius: 6px; border: 2px solid #3498db; font-size: 14px;">
+   </div>
+
+   <!-- 🔢 Total integrantes -->
+   <div class="grupo">
+      <div class="tarjetas">
+       <div class="tarjeta total">
+      <h6 id="contadorBtn">Integrantes del Club: 0</h6>
+      </div>
+     </div>
+   </div>
+
+      <!-- Directiva -->
+      <div class="grupo">
+        <h3>Miembros de la Directiva</h3>
+        <div class="tarjetas">
+          <div class="tarjeta directiva">
+            <img src="./src/img/fotos-hojas-de-vida/foto-liliana-ayub.jpg" alt="Liliana Ayub">
+            <h4>Liliana Ayub Solera</h4>
+              <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/liliana-patricia-ayub-solera.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta directiva">
+            <img src="./src/img/fotos-hojas-de-vida/foto-nelson-quinto.jpg" alt="Nelson Quinto">
+            <h4>Nelson Quinto Mosquera</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/nelson-quinto-mosquera.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta directiva">
+            <img src="./src/img/fotos-hojas-de-vida/foto-david-quinto.jpg" alt="David Quinto">
+            <h4>David Quinto Ayub</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/angel-david-quinto-ayub.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta directiva">
+            <img src="./src/img/fotos-hojas-de-vida/foto-emerson-diaz.jpg" alt="Emerson Diaz">
+            <h4>Emerson Díaz Misal</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/emerson-diaz-misal.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta directiva">
+            <img src="./src/img/fotos-hojas-de-vida/foto-yuliett-hernandez.jpg" alt="Yuliett">
+            <h4>Yuliett Hernández Montoya</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/yuliett-patricia-hernandez-montoya.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Miembros -->
+      <div class="grupo">
+        <h3>Miembros del Club</h3>
+        <div class="tarjetas">
+          <div class="tarjeta miembro mujer">
+            <img src="./src/img/fotos-hojas-de-vida/foto-ailyn-alvarez.jpg" alt="Ailín Álvarez">
+            <h4>Ailín Álvarez Jaraba</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/ailyn-alvarez-jaraba.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="./src/img/fotos-hojas-de-vida/foto-yefrem-palacio.jpg" alt="Yefrem Palacio">
+            <h4>Yefrem Palacio Berrio</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/yefrem-palacio-berrio.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="./src/img/fotos-hojas-de-vida/foto-valeria-alvarez.jpg" alt="Valeria Álvarez">
+            <h4>Valeria Álvarez Jaraba</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/valeria-alvarez-jaraba.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="./src/img/fotos-hojas-de-vida/foto-alaia-ayub.jpg" alt="Alahia Ayub">
+            <h4>Alahia Ayub Rios</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/alaia-ayub-rios.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="./src/img/fotos-hojas-de-vida/foto-yajaira-hernandez.jpg" alt="Yajaira Hernández">
+            <h4>Yajaira Hernández Rojas</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/yajaira-michell-hernandez-rojas.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="./src/img/fotos-hojas-de-vida/foto-yidis-palacio.jpg" alt="Yidis Palacio">
+            <h4>Yidis Palacio Alvarado</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/yidis-palacio-alvarado.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="./src/img/fotos-hojas-de-vida/foto-yeiner-munoz.jpg" alt="Yeiner Muñoz">
+            <h4>Yeiner Muñoz Garcés</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/yeiner-andres-munoz-garces.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="./src/img/fotos-hojas-de-vida/foto-kaleth-guerra.jpg" alt="Kaleth Guerra">
+            <h4>Kaleth Guerra Yoli</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/kaleth-guerra-yoli.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro mujer">
+            <img src="./src/img/fotos-hojas-de-vida/foto-catalella-diaz.jpg" alt="Catalella Díaz">
+            <h4>Catalella Díaz Hernández</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/catalella-diaz-hernandez.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="./src/img/fotos-hojas-de-vida/foto-caleb-quinto.jpg" alt="Caleb Quinto">
+            <h4>Caleb Quinto Ayub</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/caleb-quinto-ayub.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="./src/img/fotos-hojas-de-vida/foto-herly-diaz.jpg" alt="Herly Diaz">
+            <h4>Herly Diaz Batista</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/herly-diaz-batista.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta miembro">
+            <img src="./src/img/fotos-hojas-de-vida/foto-jhonier-gallego.jpg" alt="Jhonier Gallego">
+            <h4>Jhonier Gallego Teherán</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/jhonier-andres-gallego-teheran.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acompañantes -->
+      <div class="grupo">
+        <h3>Acompañantes del Club</h3>
+        <div class="tarjetas">
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Edilma López">
+            <h4>Edilma López Estrada</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/edilma-rosa-lopez-estrada.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Ady Yoli">
+            <h4>Ady Yoli Anaya</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/edilma-rosa-lopez-estrada.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Dorquis Jaraba">
+            <h4>Dorquis Jaraba Castillo</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/edilma-rosa-lopez-estrada.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Verónica Álvarez">
+            <h4>Verónica Álvarez Jaraba</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/veronica-alvarez-jaraba.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Máximo Torres">
+            <h4>Máximo Antonio Torres</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/maximo-antonio-torres-torres.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Roberto Mendoza">
+            <h4>Roberto Antonio Mendoza</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/robero-antonio-mendoza-perez.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Raúl Palacio">
+            <h4>Raúl Palacio Salas</h4>
+             <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/raul-palacio-salas.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Marledis Berrio">
+            <h4>Marledis Berrio Caucíl</h4> 
+            <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/marledis-berrio-caucil.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Luís Hernández">
+            <h4>Luís Hernández Santana</h4>
+            <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/luis-alberto-hernandez-santana.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Viviana Castellano">
+            <h4>Viviana Castellano González</h4>
+            <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/viviana-sofia-castellano-gonzales.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Eliab Hernández">
+            <h4>Eliab Hernández Castellano</h4>
+            <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/eliab-hernandez-castellano.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+          <div class="tarjeta acompanante">
+            <img src="src/img/fotos-hojas-de-vida/foto-acompañantes.png" alt="Samuel Díaz">
+            <h4>Samuel Díaz Hernández</h4>
+            <button onclick="verPDFModal('./src/pdfs/hojas-de-vida/samuel-andres-diaz-hernandez.pdf', '40%', '100%')">Ver Hoja de Vida</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="historia" class="oculto">
-      <h2>📖 Historia del Club</h2>
-      <p>Aquí va la historia del club.</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
-    </section>
+      <h2 class="encabezado-epico">HISTORIA DEL CLUB DE AVENTUREROS HOREB</h2>
+
+      <!-- Botones de años -->
+     <div class="botones-historia">
+       <button class="btn-anio" data-anio="2022">RECUERDOS AÑO 2022</button>
+       <button class="btn-anio" data-anio="2023">RECUERDOS AÑO 2023</button>
+       <button class="btn-anio" data-anio="2024">RECUERDOS AÑO 2024</button>
+      </div>
+
+     <!-- Contenedor dinámico de recuerdos -->
+     <div class="seccion-recuerdos">
+       <div class="carrusel"></div>
+       <div class="grid-fotos"></div>
+     </div>
+
+     <!-- Modal para ver imagen grande -->
+     <div id="modal-foto" class="modal-oculto">
+       <div class="modal-contenido">
+         <span id="cerrar-foto" class="cerrar">&times;</span>
+         <img id="img-modal" src="" alt="Foto grande">
+       </div>
+     </div>
+
+     <!-- PDF de la historia -->
+     <div class="pdf-historia">
+       <iframe id="iframe-historia" src="./src/pdfs/historia-club-horeb/historia-del-club-horeb.pdf"></iframe>
+      </div>
+   </section>
+
 
     <section id="actividades" class="oculto">
-      <h2>🎲 Nuestras Actividades</h2>
-      <p>Cronograma de actividades hasta octubre</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
-    </section>
+  <h2 class="encabezado-epico">📅 Cronograma de Actividades 2025 </h2>
 
-    <section id="ideales" class="oculto">
-      <h2>🧬 Nuestros Ideales</h2>
-      <p>Visión, misión y propósito del Club.</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
-    </section>
+  <!-- PDF principal del cronograma -->
+  <div class="pdf-cronograma">
+    <iframe id="iframe-cronograma" src="./src/pdfs/calendario-horeb-2025/calendario-de-actividades-club-horeb.pdf"></iframe>
+  </div>
 
-    <section id="galeria" class="oculto">
-      <h2>📸 Nuestra Galería</h2>
-      <p>Aquí estarán las evidencias fotográficas de las actividades realizadas.</p>
-      <button onclick="mostrarSeccion('inicio')">🔙 Volver</button>
-    </section>
+  <!-- Botones de informes -->
+  <div class="botones-historia">
+    <button class="btn-anio" onclick="verPDFModal('src/pdfs/calendario-horeb-2025/informe-dia-mundial-del-aventurero.pdf','40%', '100%')">Día Mundial del Aventurero</button>
+    <button class="btn-anio" onclick="verPDFModal('src/pdfs/calendario-horeb-2025/informe-semana-de-mayordomia.pdf','40%', '100%')">Semana de Mayordomía</button>
+    <button class="btn-anio" onclick="verPDFModal('src/pdfs/calendario-horeb-2025/informe-brillando-en-la-integracion.pdf','40%', '100%')">Brillando en la Integración</button>
+    <button class="btn-anio" onclick="verPDFModal('src/pdfs/calendario-horeb-2025/informe-brillando-en-la-mision-y-unidad.pdf','40%', '100%')">Brillando en la Misión y la Unidad</button>
+  </div>
+</section>
 
-    <!-- Versículo -->
-    <section>
-      <h2>Versículo Principal ✨</h2>
-      <blockquote>
-        "Y Noé hizo conforme a todo lo que Jehová le mandó." <br>
-        <em>Génesis 7:5</em>
-      </blockquote>
-    </section>
+   <!-- 🌟 IDEALES -->
+<section id="ideales" class="oculto">
+  <h2 class="encabezado-epico">🧬 Ideales Club Horeb</h2>
+  
+  
+ <div class="contenedor-ideales">
+    <!-- Tarjeta destacada ¿Quiénes somos? -->
+   <div class="tarjeta-ideales tarjeta-destacada">
+     <h3>¿QUIÉNES SOMOS?</h3>
+     <p>
+     Somos el Club de Aventureros Horeb, un grupo de niños, padres y líderes comprometidos con el desarrollo integral de los pequeños de nuestra iglesia. 
+     Pertenecemos a la Iglesia Adventista del Séptimo Día Belén, del distrito Maranatha Bajirá, y trabajamos con el objetivo de fomentar valores cristianos, habilidades físicas, sociales y espirituales. 
+     Nuestro club nace del deseo de crear un espacio seguro, divertido y educativo, donde cada niño pueda crecer en fe, aprender a servir y prepararse para una vida guiada por los principios de Dios.
+     </p>
+   </div>
+
+
+    <!-- Lema -->
+    <div class="tarjeta-ideales tarjeta-lema">
+      <h3>LEMA DEL CLUB:</h3>
+      <p>¡Conquistando la Cima!</p>
+    </div>
+
+    <!-- Visión -->
+    <div class="tarjeta-ideales">
+      <h3>NUESTRA VISIÓN:</h3>
+      <p>
+      Formaremos a cada aventurero para que en un futuro 
+      sea un Ciudadano del Reino de los Cielos.
+      </p>
+    </div>
+
+    <!-- Misión -->
+    <div class="tarjeta-ideales">
+      <h3>NUESTRA MISIÓN:</h3>
+     <p>
+     Guiar y educar a los niños y adolescentes en 
+     el desarrollo integral de su vida Espiritual, 
+     Física, Mental y Social.
+      </p>
+    </div>
+
+    <!-- Valores -->
+    <div class="tarjeta-ideales">
+      <h3>NUESTROS VALORES:</h3>
+      <ul>
+        <li>Amor – Servimos y repetamos a los demás con el corazón.</li>
+        <li>Fe – Confiamos plenamente en Dios en todo momento.</li>
+        <li>servicio – Sabemos que mejor es dar que recibir.</li>
+        <li>Amistad – Construimos relaciones humanas reales y sinceras.</li>
+        <li>Respeto – Valoramos a cada persona como un regalo de Dios.</li>
+        <li>Alegría – Mostramos siempre una actitud positiva.</li>
+        <li>Honestidad – Educamos de una forma integral.</li>
+        <li>Excelencia – Damos siempre lo mejor de nosotros.</li>
+      </ul>
+    </div>
+
+    <!-- Propósitos -->
+    <div class="tarjeta-ideales tarjeta-propositos">
+      <h3>NUESTROS PROPÓSITOS:</h3>
+      <ul>
+        <li>Fortalecer la Fe – Guiar a los niños a confiar en Dios.</li>
+        <li>Desarrollar talentos – Potenciar habilidades físicas, sociales y espirituales.</li>
+        <li>Educar Integralmente – Formar a los niños en cuerpo, mente y espíritu.</li>
+        <li>Servir a la comunidad – Motivar la participación y el servicio a otros.</li>
+      </ul>
+    </div>
+  </div>
+ </section>
+
+ <!-- 📸 SECCION GALERIA -->
+ <section id="galeria" class="oculto">
+   <h2 class="encabezado-epico">📸 Galería de Actividades 2025</h2>
+   <div id="carrusel-galeria" class="carrusel"></div>
+   <div id="grid-galeria" class="grid-fotos"></div>
+
+   <!-- 📌 Modal Galería -->
+   <div id="modal-galeria" class="hidden">
+     <span id="cerrar-modal">&times;</span>
+     <img id="modal-img" src="" alt="Foto en grande">
+   </div>
+
+  </section>
+
+
+    <section id="certificados" class="oculto">
+  <h2 class="encabezado-epico">📜 Certificados de Actividades 2025 </h2>
+
+  <!-- PDF principal del cronograma -->
+  <div class="pdf-cronograma">
+    <iframe id="iframe-cronograma" src="./src/pdfs/calendario-horeb-2025/calendario-de-actividades-club-horeb.pdf"></iframe>
+  </div>
+
+  <!-- Botones de informes -->
+  <div class="botones-cetificados">
+    <button class="btn-certificado" onclick="verPDFModal('src/pdfs/certificados/semana-de-aventureros.pdf','40%', '100%')">Certificado Semana de los Aventureros</button>
+    <button class="btn-certificado" onclick="verPDFModal('src/pdfs/certificados/certificado-dia-del-aventurero.pdf','40%', '100%')">Certificado Día Mundial del Aventurero</button>
+    <button class="btn-certificado" onclick="verPDFModal('src/pdfs/certificados/certificado-semana-de-mayordomia.pdf','40%', '100%')">Certificado Semana de Mayordomía</button>
+    <button class="btn-certificado" onclick="verPDFModal('src/pdfs/certificados/certificado-brillando-en-la-integracion.pdf','40%', '100%')">Certificado Brillando en la Integración</button>
+    <button class="btn-certificado" onclick="verPDFModal('src/pdfs/certificados/certificado-brillando-en-la-mision-y-unidad.pdf','40%', '100%')">Certificado Brillando en la Misión y la Unidad</button>
+  </div>
+</section>
+
+    <!-- Versículo 
+ <section>
+   <h2>Versículo Principal ✨</h2>
+   <div id="versiculo" style="display:none;"></div>
+ </section>-->
+
 
     <!-- Pie -->
     <footer>
-      <p>&copy; Club de Aventureros Horeb 2025</p>
+      <p>Copyright © 2025 | Club de Aventureros Horeb | Todos los derechos reservados.</p>
     </footer>
 
   </div>
 
   <!-- Script -->
   <script src="./src/app/app.js"></script>
+
+  <!-- 📄 Modal para ver PDF -->
+ <div id="modal-pdf" class="modal-oculto">
+   <div class="modal-contenido-pdf">
+     <button id="cerrar-modal-pdf">✖</button>
+     <iframe id="iframe-pdf"></iframe>
+   </div>
+ </div>
+
+ <!-- Logo del Club -->
+ <div id="logo-club">
+   <img src="./src/img/logo-horeb.png" alt="Logo Horeb" />
+ </div>
+ <!-- Logo del Campamento -->
+ <div id="logo-campamento">
+   <img src="./src/img/logo-campamento.png" alt="Logo Campamento" />
+ </div>
+
+
 </body>
-</html>
